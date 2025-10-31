@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angeltia | أنجلتيا</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- الخلفية المتحركة -->
+    <div class="bg-animation">
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+    </div>
+
+    <!-- الشريط العلوي -->
+    <nav class="glass-nav">
+        <div class="nav-brand">
+            <i class="fas fa-star"></i>
+            <span>Angeltia</span>
+        </div>
+        <div class="nav-links">
+            <button class="nav-btn" onclick="showSection('profile')">
+                <i class="fas fa-user"></i>
+                <span>البروفايل</span>
+            </button>
+            <button class="nav-btn" onclick="showSection('music')">
+                <i class="fas fa-music"></i>
+                <span>الموسيقى</span>
+            </button>
+            <button class="nav-btn" onclick="showSection('camera')">
+                <i class="fas fa-camera"></i>
+                <span>الكاميرا</span>
+            </button>
+            <button class="nav-btn" onclick="showSection('settings')">
+                <i class="fas fa-cog"></i>
+                <span>الإعدادات</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="container">
+        <!-- قسم البروفايل -->
+        <section id="profile" class="section active">
+            <div class="profile-card glass-card">
+                <div class="profile-header">
+                    <div class="avatar-wrapper">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200&h=200&fit=crop&crop=face" alt="Avatar" class="avatar" id="profileAvatar">
+                        <div class="online-dot"></div>
+                        <span class="badge owner-badge admin-only" id="ownerBadge" style="display: none;">
+                            <i class="fas fa-crown"></i>
+                            المسؤول
+                        </span>
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="profile-name" id="profileName">أنجل تيا</h1>
+                        <p class="profile-bio" id="profileBio">مطور واجهات مستخدم | مصمم تجربة مستخدم</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-number" id="viewCount">1.2K</span>
+                                <span class="stat-label">مشاهدات</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">48</span>
+                                <span class="stat-label">مشروع</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">96</span>
+                                <span class="stat-label">إعجاب</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-actions">
+                    <button class="action-btn primary" onclick="showSection('music')">
+                        <i class="fas fa-play"></i>
+                        تشغيل الموسيقى
+                    </button>
+                    <button class="action-btn secondary" onclick="showSection('camera')">
+                        <i class="fas fa-camera"></i>
+                        فتح الكاميرا
+                    </button>
+                    <button class="action-btn secondary" onclick="showSocialLinks()">
+                        <i class="fas fa-share-alt"></i>
+                        وسائل التواصل
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الموسيقى -->
+        <section id="music" class="section">
+            <div class="music-player glass-card">
+                <div class="player-header">
+                    <h2><i class="fas fa-music"></i> مشغل الموسيقى</h2>
+                    <button class="close-btn" onclick="showSection('profile')">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="track-info">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop" alt="Track Cover" class="track-cover" id="trackCover">
+                    <div class="track-details">
+                        <h3 class="track-title" id="trackTitle">Midnight Dreams</h3>
+                        <p class="track-artist" id="trackArtist">Angeltia</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progressBar">
+                                <div class="progress" id="progress"></div>
+                            </div>
+                            <div class="time-display">
+                                <span id="currentTime">0:00</span>
+                                <span id="duration">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="player-controls">
+                    <button class="control-btn" onclick="previousTrack()">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button class="control-btn play-btn" onclick="togglePlay()">
+                        <i class="fas fa-play" id="playIcon"></i>
+                    </button>
+                    <button class="control-btn" onclick="nextTrack()">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                </div>
+                
+                <div class="extra-controls">
+                    <div class="volume-control">
+                        <i class="fas fa-volume-up"></i>
+                        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50">
+                    </div>
+                    <button class="playlist-btn" onclick="showPlaylist()">
+                        <i class="fas fa-list"></i>
+                        القائمة
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الكاميرا -->
+        <section id="camera" class="section">
+            <div class="camera-container glass-card">
+                <div class="camera-header">
+                    <h2><i class="fas fa-camera"></i> الكاميرا</h2>
+                    <button class="close-btn" onclick="showSection('profile')">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="camera-preview">
+                    <video id="cameraFeed" autoplay playsinline></video>
+                    <canvas id="photoCanvas" class="hidden"></canvas>
+                </div>
+                
+                <div class="camera-controls">
+                    <button class="camera-btn capture-btn" onclick="capturePhoto()">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                    <button class="camera-btn switch-btn" onclick="switchCamera()">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                    <button class="camera-btn gallery-btn" onclick="toggleGallery()">
+                        <i class="fas fa-images"></i>
+                    </button>
+                </div>
+                
+                <div id="photoGallery" class="photo-gallery hidden">
+                    <div class="gallery-header">
+                        <h3>معرض الصور</h3>
+                        <button class="close-btn" onclick="toggleGallery()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="gallery-items" id="galleryItems">
+                        <!-- الصور تظهر هنا -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الإعدادات -->
+        <section id="settings" class="section">
+            <div class="settings-container glass-card">
+                <div class="settings-header">
+                    <h2><i class="fas fa-cog"></i> الإعدادات</h2>
+                    <button class="close-btn" onclick="showSection('profile')">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="settings-content">
+                    <div class="setting-group">
+                        <h3>المظهر</h3>
+                        <div class="theme-options">
+                            <button class="theme-btn active" data-theme="dark" onclick="changeTheme('dark')">
+                                <i class="fas fa-moon"></i>
+                                داكن
+                            </button>
+                            <button class="theme-btn" data-theme="light" onclick="changeTheme('light')">
+                                <i class="fas fa-sun"></i>
+                                فاتح
+                            </button>
+                            <button class="theme-btn" data-theme="auto" onclick="changeTheme('auto')">
+                                <i class="fas fa-adjust"></i>
+                                تلقائي
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <h3>البروفايل</h3>
+                        <div class="input-group">
+                            <label>الاسم:</label>
+                            <input type="text" id="nameInput" value="أنجل تيا" class="settings-input">
+                        </div>
+                        <div class="input-group">
+                            <label>الوصف:</label>
+                            <textarea id="bioInput" class="settings-textarea">مطور واجهات مستخدم | مصمم تجربة مستخدم</textarea>
+                        </div>
+                        <div class="input-group">
+                            <label>صورة البروفايل:</label>
+                            <input type="file" id="avatarInput" accept="image/*" class="settings-file">
+                        </div>
+                        <button class="save-btn" onclick="saveProfile()">
+                            <i class="fas fa-save"></i>
+                            حفظ التغييرات
+                        </button>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <h3>الموسيقى</h3>
+                        <div class="input-group">
+                            <label>رفع أغنية:</label>
+                            <input type="file" id="musicInput" accept="audio/*" class="settings-file">
+                        </div>
+                        <div class="input-group">
+                            <label>صورة الأغنية:</label>
+                            <input type="file" id="coverInput" accept="image/*" class="settings-file">
+                        </div>
+                    </div>
+
+                    <div class="setting-group admin-only" style="display: none;">
+                        <h3><i class="fas fa-crown"></i> إعدادات المسؤول</h3>
+                        <div class="admin-actions">
+                            <button class="action-btn primary" onclick="saveGlobalSettings()">
+                                <i class="fas fa-globe"></i>
+                                حفظ الإعدادات للجميع
+                            </button>
+                            <button class="action-btn secondary" onclick="logoutAdmin()">
+                                <i class="fas fa-sign-out-alt"></i>
+                                تسجيل الخروج
+                            </button>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">
+                            أي تغييرات تسويها راح تظهر لكل الزوار
+                        </p>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3><i class="fas fa-user-cog"></i> التحكم</h3>
+                        <button class="action-btn secondary" onclick="loginAsAdmin()">
+                            <i class="fas fa-key"></i>
+                            الدخول كمسؤول
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- نافذة وسائل التواصل -->
+    <div id="socialModal" class="modal hidden">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3><i class="fas fa-share-alt"></i> وسائل التواصل</h3>
+                <button class="close-btn" onclick="closeSocialModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="social-links" id="socialLinks">
+                    <!-- الروابط تظهر هنا -->
+                </div>
+                <div class="add-social-form">
+                    <h4>إضافة رابط جديد</h4>
+                    <div class="input-group">
+                        <label>المنصة:</label>
+                        <select id="socialPlatform" class="settings-input">
+                            <option value="instagram">انستغرام</option>
+                            <option value="twitter">تويتر</option>
+                            <option value="youtube">يوتيوب</option>
+                            <option value="tiktok">تيك توك</option>
+                            <option value="snapchat">سناب شات</option>
+                            <option value="website">موقع ويب</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>الرابط:</label>
+                        <input type="text" id="socialUrl" placeholder="https://..." class="settings-input">
+                    </div>
+                    <button class="action-btn primary" onclick="addSocialLink()" style="width: 100%; margin-top: 1rem;">
+                        <i class="fas fa-plus"></i>
+                        إضافة الرابط
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- الإشعارات -->
+    <div id="notification" class="notification hidden">
+        <span id="notificationText"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

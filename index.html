@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angeltia | أنجلتيا</title>
+    <title>Angeltia | W </title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -22,7 +22,7 @@
             <span>Angeltia</span>
         </div>
         <div class="nav-links">
-            <button class="nav-btn" onclick="showSection('profile')">
+            <button class="nav-btn active" onclick="showSection('profile')">
                 <i class="fas fa-user"></i>
                 <span>البروفايل</span>
             </button>
@@ -48,7 +48,7 @@
             <div class="profile-card glass-card">
                 <div class="profile-header">
                     <div class="avatar-wrapper">
-                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200&h=200&fit=crop&crop=face" alt="Avatar" class="avatar" id="profileAvatar">
+                        <img src="https://cdn.discordapp.com/attachments/1417860725552185361/1434070255252013056/image.jpg?ex=6906fd80&is=6905ac00&hm=cfeb7518ce35ea0b842693b02fa8a386017011a4dcafa73b4cb7298605c2e957&" alt="Avatar" class="avatar" id="profileAvatar">
                         <div class="online-dot"></div>
                         <span class="badge owner-badge admin-only" id="ownerBadge" style="display: none;">
                             <i class="fas fa-crown"></i>
@@ -56,19 +56,16 @@
                         </span>
                     </div>
                     <div class="profile-info">
-                        <h1 class="profile-name" id="profileName">أنجل تيا</h1>
-                        <p class="profile-bio" id="profileBio">مطور واجهات مستخدم | مصمم تجربة مستخدم</p>
+                        <h1 class="profile-name" id="profileName">=--=</h1>
+                        <p class="profile-bio" id="profileBio">مطورة واجهات مستخدم | مصممة تجربة مستخدم</p>
                         <div class="profile-stats">
                             <div class="stat">
-                                <span class="stat-number" id="viewCount">1.2K</span>
+                                <span class="stat-number" id="viewCount">36</span>
                                 <span class="stat-label">مشاهدات</span>
                             </div>
+                        
                             <div class="stat">
-                                <span class="stat-number">48</span>
-                                <span class="stat-label">مشروع</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">96</span>
+                                <span class="stat-number">17</span>
                                 <span class="stat-label">إعجاب</span>
                             </div>
                         </div>
@@ -218,20 +215,16 @@
                         <h3>البروفايل</h3>
                         <div class="input-group">
                             <label>الاسم:</label>
-                            <input type="text" id="nameInput" value="أنجل تيا" class="settings-input">
+                            <input type="text" id="nameInput" value="تيا" class="settings-input">
                         </div>
                         <div class="input-group">
                             <label>الوصف:</label>
-                            <textarea id="bioInput" class="settings-textarea">مطور واجهات مستخدم | مصمم تجربة مستخدم</textarea>
+                            <textarea id="bioInput" class="settings-textarea">مطورة واجهات مستخدم | مصممة تجربة مستخدم</textarea>
                         </div>
                         <div class="input-group">
                             <label>صورة البروفايل:</label>
                             <input type="file" id="avatarInput" accept="image/*" class="settings-file">
                         </div>
-                        <button class="save-btn" onclick="saveProfile()">
-                            <i class="fas fa-save"></i>
-                            حفظ التغييرات
-                        </button>
                     </div>
                     
                     <div class="setting-group">
@@ -252,6 +245,10 @@
                             <button class="action-btn primary" onclick="saveGlobalSettings()">
                                 <i class="fas fa-globe"></i>
                                 حفظ الإعدادات للجميع
+                            </button>
+                            <button class="action-btn secondary" onclick="changeSettingsPassword()">
+                                <i class="fas fa-key"></i>
+                                تغيير كلمة المرور
                             </button>
                             <button class="action-btn secondary" onclick="logoutAdmin()">
                                 <i class="fas fa-sign-out-alt"></i>

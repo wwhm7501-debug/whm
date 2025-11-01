@@ -195,20 +195,7 @@ function showPasswordModal() {
                 </button>
             </div>
             
-    `;
-    document.body.appendChild(modal);
     
-    setTimeout(() => {
-        const passwordInput = document.getElementById('passwordInput');
-        if (passwordInput) {
-            passwordInput.focus();
-            passwordInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    verifyPassword();
-                }
-            });
-        }
-    }, 100);
 }
 
 
@@ -1008,4 +995,5 @@ window.addEventListener('beforeunload', () => {
 });
 
 console.log('🚀 Angeltia Portfolio Loaded Successfully!');
+
 

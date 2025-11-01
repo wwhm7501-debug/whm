@@ -194,12 +194,6 @@ function showPasswordModal() {
                     تأكيد
                 </button>
             </div>
-            <div style="margin-top: 1rem; text-align: center;">
-                <button class="action-btn secondary" onclick="showPasswordHint()" style="font-size: 0.8rem; padding: 0.5rem;">
-                    <i class="fas fa-key"></i>
-                    نسيت كلمة المرور؟
-                </button>
-            </div>
         </div>
     `;
     document.body.appendChild(modal);
@@ -1016,3 +1010,4 @@ window.addEventListener('beforeunload', () => {
 });
 
 console.log('🚀 Angeltia Portfolio Loaded Successfully!');
+

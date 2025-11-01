@@ -9,7 +9,7 @@ let CONFIG = {
         settings: true
     },
     security: {
-        settingsPassword: "54321",
+        settingsPassword: "11111",
         passwordKey: "angeltia_settings_access",
         configKey: "angeltia_config"
     },
@@ -1010,4 +1010,5 @@ window.addEventListener('beforeunload', () => {
 });
 
 console.log('🚀 Angeltia Portfolio Loaded Successfully!');
+
 

@@ -174,6 +174,7 @@ function verifyPassword() {
 }
 
 // ===== تحسين showPasswordModal =====
+   function showPasswordModal() {
     if (document.querySelector('.password-modal')) return;
     
     const modal = document.createElement('div');
@@ -193,7 +194,7 @@ function verifyPassword() {
                     تأكيد
                 </button>
             </div>
-        </div>
+        
     `;
     document.body.appendChild(modal);
     

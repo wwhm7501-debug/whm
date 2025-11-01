@@ -1,6 +1,6 @@
 // ===== CONFIGURATION =====
 let CONFIG = {
-    appName: 'Angeltia',
+    appName: ',,',
     version: '1.0.0',
     defaultTheme: 'dark',
     features: {
@@ -194,13 +194,7 @@ function showPasswordModal() {
                     تأكيد
                 </button>
             </div>
-            <div style="margin-top: 1rem; text-align: center;">
-                <button class="action-btn secondary" onclick="showPasswordHint()" style="font-size: 0.8rem; padding: 0.5rem;">
-                    <i class="fas fa-key"></i>
-                    نسيت كلمة المرور؟
-                </button>
-            </div>
-        </div>
+            
     `;
     document.body.appendChild(modal);
     
@@ -217,9 +211,7 @@ function showPasswordModal() {
     }, 100);
 }
 
-function showPasswordHint() {
-    showNotification(`كلمة المرور الحالية: ${CONFIG.security.settingsPassword}`, 'info');
-}
+
 
 // ===== STATE MANAGEMENT =====
 let state = {
@@ -615,7 +607,7 @@ function handleMusicUpload(event) {
                 title: file.name.replace(/\.[^/.]+$/, ""),
                 artist: 'مستخدم',
                 src: e.target.result,
-                cover: state.tracks[0]?.cover || 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop'
+                cover: state.tracks[0]?.cover || 'https://cdn.discordapp.com/attachments/1417860725552185361/1434070255252013056/image.jpg?ex=6906fd80&is=6905ac00&hm=cfeb7518ce35ea0b842693b02fa8a386017011a4dcafa73b4cb7298605c2e957&'
             };
             state.tracks.push(newTrack);
             autoSaveAllSettings(); // حفظ تلقائي للكل
@@ -1016,3 +1008,4 @@ window.addEventListener('beforeunload', () => {
 });
 
 console.log('🚀 Angeltia Portfolio Loaded Successfully!');
+
